@@ -67,12 +67,19 @@ namespace Division_Tutor
                 {
                     //The problem numbers and the user answer is passed to be checked
                     int userNum = Convert.ToInt32(userAnswer);
+<<<<<<< HEAD
                     CheckAnswer(numOne, numTwo, userNum);
+
+                    
+>>>>>>> 7c74ec61be86593aa2554bbda9b116ac5cd1f767
                 }
             }
 
             //This method checks the user's answer
+<<<<<<< HEAD
             void CheckAnswer(int valueX, int valueY, int checkThis)
+
+>>>>>>> 7c74ec61be86593aa2554bbda9b116ac5cd1f767
             {
                 int cAnswer = valueX / valueY;
                 
