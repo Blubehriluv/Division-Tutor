@@ -60,26 +60,30 @@ namespace Division_Tutor
                     Console.WriteLine("Thank you!");
                     Console.WriteLine("Press enter to continue.");
                     Console.ReadLine();
+                    System.Environment.Exit(1);
                 }
 
                 //If the user submits literally anything else, they can answer the problem
-                if (userAnswer != "q")
+                else if (userAnswer != "q")
                 {
+                    int userNum;
                     //The problem numbers and the user answer is passed to be checked
-                    int userNum = Convert.ToInt32(userAnswer);
-<<<<<<< HEAD
-                    CheckAnswer(numOne, numTwo, userNum);
-
-                    
->>>>>>> 7c74ec61be86593aa2554bbda9b116ac5cd1f767
+                    try
+                    {
+                        userNum = Convert.ToInt32(userAnswer);
+                        CheckAnswer(numOne, numTwo, userNum);
+                        //userNum = Int32.Parse(userAnswer);
+                    }
+                    catch (Exception e)
+                    {
+                        Console.WriteLine("Please enter a number or use 'q' to quit.");
+                        GetAnswer(numOne, numTwo);
+                    }
                 }
             }
 
             //This method checks the user's answer
-<<<<<<< HEAD
             void CheckAnswer(int valueX, int valueY, int checkThis)
-
->>>>>>> 7c74ec61be86593aa2554bbda9b116ac5cd1f767
             {
                 int cAnswer = valueX / valueY;
                 
