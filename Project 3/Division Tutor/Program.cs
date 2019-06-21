@@ -20,10 +20,10 @@ namespace Division_Tutor
             Console.WriteLine("Use 'q' to quit");
 
             //Gives the user a problem
-            spawnProblem();
+            SpawnProblem();
 
             //After answering the current problem correctly, this gives the user a new one
-            void spawnProblem()
+            void SpawnProblem()
             {
                 //Spawns two numbers randomly
                 Random rand = new Random();
@@ -66,13 +66,16 @@ namespace Division_Tutor
                 if (userAnswer != "q")
                 {
                     //The problem numbers and the user answer is passed to be checked
-                    double userNum = Convert.ToDouble(userAnswer);
+                    int userNum = Convert.ToInt32(userAnswer);
+
                     checkAnswer(numOne, numTwo, userNum);
+
+                    
                 }
             }
 
             //This method checks the user's answer
-            void checkAnswer(int valueX, int valueY, double checkThis)
+            void checkAnswer(int valueX, int valueY, int checkThis)
             {
                 int cAnswer = valueX / valueY;
                 
@@ -97,7 +100,7 @@ namespace Division_Tutor
             {
                 Console.WriteLine("Correct! Proceed to the next question.");
                 Console.WriteLine();
-                spawnProblem();
+                SpawnProblem();
             }
         }
     }
