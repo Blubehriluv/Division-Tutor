@@ -20,10 +20,10 @@ namespace Division_Tutor
             Console.WriteLine("Use 'q' to quit");
 
             //Gives the user a problem
-            spawnProblem();
+            SpawnProblem();
 
             //After answering the current problem correctly, this gives the user a new one
-            void spawnProblem()
+            void SpawnProblem()
             {
                 //Spawns two numbers randomly
                 Random rand = new Random();
@@ -43,12 +43,12 @@ namespace Division_Tutor
                 Console.WriteLine("{0} / {1} = ", numOne, numTwo);
 
                 //Passes the variables to the method that gets answers
-                getAnswer(numOne, numTwo);
+                GetAnswer(numOne, numTwo);
 
             }
 
             //Checks for the user to quit or submit a numeric answer
-            void getAnswer(int numOne, int numTwo)
+            void GetAnswer(int numOne, int numTwo)
             {
                 string userAnswer;
                 userAnswer = Console.ReadLine();
@@ -66,13 +66,13 @@ namespace Division_Tutor
                 if (userAnswer != "q")
                 {
                     //The problem numbers and the user answer is passed to be checked
-                    double userNum = Convert.ToDouble(userAnswer);
-                    checkAnswer(numOne, numTwo, userNum);
+                    int userNum = Convert.ToInt32(userAnswer);
+                    CheckAnswer(numOne, numTwo, userNum);
                 }
             }
 
             //This method checks the user's answer
-            void checkAnswer(int valueX, int valueY, double checkThis)
+            void CheckAnswer(int valueX, int valueY, int checkThis)
             {
                 int cAnswer = valueX / valueY;
                 
@@ -85,19 +85,19 @@ namespace Division_Tutor
                     Console.WriteLine("Attempts: {0}", userAttempts);
                     Console.WriteLine();
                     Console.WriteLine("{0} / {1} = ", valueX, valueY);
-                    getAnswer(valueX, valueY);
+                    GetAnswer(valueX, valueY);
                 }
 
                 //This is triggered when the user is correct
-                userSuccess();
+                UserSuccess();
             }
 
             //Congratulatorily sends the user to the next question.
-            void userSuccess()
+            void UserSuccess()
             {
                 Console.WriteLine("Correct! Proceed to the next question.");
                 Console.WriteLine();
-                spawnProblem();
+                SpawnProblem();
             }
         }
     }
